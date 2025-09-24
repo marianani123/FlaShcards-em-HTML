@@ -1,3 +1,9 @@
+:root {
+    --text-color: #DBE4EF;
+    --card-front-color: #144480;
+    --card-back-color: #00F4BF;
+}
+
 body {
     backgroud-color: bisque;
     font-family: Bai Jamjuree;
@@ -34,7 +40,8 @@ body {
     margin-top: 1rem;
     padding: 2rem;
 }
-footer{
+
+footer {
     background-color: black;
     color: white;
     position: fixed;
@@ -42,9 +49,31 @@ footer{
     width: 100%;
     height: 2rem;
 }
-footer p{
+
+footer p {
     text-align: center;
     font-size: 0.6rem;
     margin-top: 0.5rem;
 }
 
+.cartao_conteudo_pergunta p {
+    color: var(--text-color);
+    font-weight: 500;
+}
+.cartao_conteudo_pergunta p {
+    color:var(--card-back-color);
+    font-weight: 700;
+}
+.cartao:hover.cartao__conteudo{
+    transform: rotateY(180deg);
+}
+.cartao_conteudo_pergunta,
+.cartao_conteudo__resposta{
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100;
+    width: 100;
+}
+.cartao_conteudo__resposta{
+    transform: rotate(180deg);
+}
