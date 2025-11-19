@@ -1,27 +1,36 @@
-function criCartao(categoria, pergunta, resposta) {
-    let conteiner = document.getElementById('conteiner')
-    let cartao = document.createElement('article')
-    cartao.className = 'cartao'
+function criaCartao(categoria, pergunta, resposta) {
+    let container = document.getElementById('container');
 
-} cartao.inneHTML = `
-<dix class=">
-<h3>${categoria}</h3>
-<div class="cartao_conteudo_pergunta">
-<p>${pergunta}</p>
+    // Criar elemento do cartão
+    let cartao = document.createElement('article');
+    cartao.className = 'cartao';
 
-</div>
-<div class=cartao_conteudop_resposta">
-<p>${resposta}</p>
-<div>
-</div>
+    // Conteúdo interno do cartão
+    cartao.innerHTML = `
+        <div class="cartao__conteudo">
+            <h3>${categoria}</h3>
 
-let respostaEstaVisivel=false
+            <div class="cartao__conteudo__pergunta">
+                <p>${pergunta}</p>
+            </div>
 
-function viracartao(){
-respostaEsvisivel=!respostaEstaVisivel
-cartao.classList.toggle('active',respostaEstaVisivel)
-}
-cartao.addEventListener('click',viracartao)
-conteiner.appenChild(cartao)
+            <div class="cartao__conteudo__resposta">
+                <p>${resposta}</p>
+            </div>
+        </div>
+    `;
 
+    // Controle de visibilidade da resposta
+    let respostaEstaVisivel = false;
+
+    function viraCartao() {
+        respostaEstaVisivel = !respostaEstaVisivel;
+        cartao.classList.toggle('active', respostaEstaVisivel);
+    }
+
+    // Evento de clique
+    cartao.addEventListener('click', viraCartao);
+
+    // Adicionando ao container
+    container.appendChild(cartao);
 }
